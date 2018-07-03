@@ -12,9 +12,12 @@
 		CE0B4A5A20EB5B7B007FD989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5820EB5B7B007FD989 /* Main.storyboard */; };
 		CE0B4A5C20EB5B7C007FD989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */; };
 		CE0B4A5F20EB5B7C007FD989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */; };
+		F922DF93842651E46F03BED2 /* Pods_VirtualAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B03B5A08B09902757B1A6BA /* Pods-VirtualAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualAssistant/Pods-VirtualAssistant.release.xcconfig"; sourceTree = "<group>"; };
+		B05FF2B8195326E40B78E112 /* Pods-VirtualAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtualAssistant/Pods-VirtualAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0B4A5120EB5B7B007FD989 /* VirtualAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B4A5420EB5B7B007FD989 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0B4A5620EB5B7B007FD989 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0B4A5E20EB5B7C007FD989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0B4A6020EB5B7C007FD989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F922DF93842651E46F03BED2 /* Pods_VirtualAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78D723142A9820F99F6C12C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B05FF2B8195326E40B78E112 /* Pods-VirtualAssistant.debug.xcconfig */,
+				1B03B5A08B09902757B1A6BA /* Pods-VirtualAssistant.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92691692E1606A8B1190B68A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE0B4A4820EB5B7B007FD989 = {
 			isa = PBXGroup;
 			children = (
 				CE0B4A5320EB5B7B007FD989 /* VirtualAssistant */,
 				CE0B4A5220EB5B7B007FD989 /* Products */,
+				78D723142A9820F99F6C12C9 /* Pods */,
+				92691692E1606A8B1190B68A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE0B4A6320EB5B7C007FD989 /* Build configuration list for PBXNativeTarget "VirtualAssistant" */;
 			buildPhases = (
+				F2BC9FF243006C6093B94D38 /* [CP] Check Pods Manifest.lock */,
 				CE0B4A4D20EB5B7B007FD989 /* Sources */,
 				CE0B4A4E20EB5B7B007FD989 /* Frameworks */,
 				CE0B4A4F20EB5B7B007FD989 /* Resources */,
+				B6DA738B66E9F960AB94192A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6DA738B66E9F960AB94192A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VirtualAssistant/Pods-VirtualAssistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtualAssistant/Pods-VirtualAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2BC9FF243006C6093B94D38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VirtualAssistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE0B4A4D20EB5B7B007FD989 /* Sources */ = {
@@ -278,6 +345,7 @@
 		};
 		CE0B4A6420EB5B7C007FD989 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B05FF2B8195326E40B78E112 /* Pods-VirtualAssistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +363,7 @@
 		};
 		CE0B4A6520EB5B7C007FD989 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B03B5A08B09902757B1A6BA /* Pods-VirtualAssistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

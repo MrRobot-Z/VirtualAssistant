@@ -1,0 +1,6 @@
+framework module Pods_VirtualAssistant {
+  umbrella header "Pods-VirtualAssistant-umbrella.h"
+
+  export *
+  module * { export * }
+}
