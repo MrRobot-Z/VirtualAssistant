@@ -13,6 +13,9 @@
 		CE0B4A5C20EB5B7C007FD989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */; };
 		CE0B4A5F20EB5B7C007FD989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */; };
 		CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1652320EB8A1E00401780 /* WitModule.swift */; };
+		CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */; };
+		CEE6159420EC520400FAD776 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159320EC520400FAD776 /* Common.swift */; };
+		CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159520EC5A2C00FAD776 /* ReadyState.swift */; };
 		F922DF93842651E46F03BED2 /* Pods_VirtualAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		CE0B4A5E20EB5B7C007FD989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0B4A6020EB5B7C007FD989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE1652320EB8A1E00401780 /* WitModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitModule.swift; sourceTree = "<group>"; };
+		CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightFunctionality.swift; sourceTree = "<group>"; };
+		CEE6159320EC520400FAD776 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		CEE6159520EC5A2C00FAD776 /* ReadyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyState.swift; sourceTree = "<group>"; };
 		D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,8 +93,19 @@
 				CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */,
 				CE0B4A6020EB5B7C007FD989 /* Info.plist */,
 				CEE1652320EB8A1E00401780 /* WitModule.swift */,
+				CEE6159720EC5A7F00FAD776 /* Functionalties */,
+				CEE6159320EC520400FAD776 /* Common.swift */,
 			);
 			path = VirtualAssistant;
+			sourceTree = "<group>";
+		};
+		CEE6159720EC5A7F00FAD776 /* Functionalties */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */,
+				CEE6159520EC5A2C00FAD776 /* ReadyState.swift */,
+			);
+			path = Functionalties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */,
 				CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */,
 				CE0B4A5720EB5B7B007FD989 /* ViewController.swift in Sources */,
+				CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */,
+				CEE6159420EC520400FAD776 /* Common.swift in Sources */,
 				CE0B4A5520EB5B7B007FD989 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
