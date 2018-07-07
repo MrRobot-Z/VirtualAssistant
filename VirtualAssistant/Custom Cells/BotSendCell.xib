@@ -28,21 +28,21 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7P-3X-zSZ" userLabel="containerView">
-                        <rect key="frame" x="45" y="19.999999999999996" width="280" height="59.666666666666657"/>
+                        <rect key="frame" x="45" y="7.6666666666666643" width="280" height="84.666666666666686"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-pI-Beg">
-                                <rect key="frame" x="15" y="0.0" width="250" height="59.666666666666664"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="15" y="10" width="250" height="64.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HTL-pI-Beg" firstAttribute="top" secondItem="e7P-3X-zSZ" secondAttribute="top" id="EHf-8a-6ff"/>
+                            <constraint firstItem="HTL-pI-Beg" firstAttribute="top" secondItem="e7P-3X-zSZ" secondAttribute="top" constant="10" id="EHf-8a-6ff"/>
                             <constraint firstAttribute="trailing" secondItem="HTL-pI-Beg" secondAttribute="trailing" constant="15" id="Q93-Ik-mRg"/>
                             <constraint firstItem="HTL-pI-Beg" firstAttribute="leading" secondItem="e7P-3X-zSZ" secondAttribute="leading" constant="15" id="gtG-of-vPH"/>
-                            <constraint firstAttribute="bottom" secondItem="HTL-pI-Beg" secondAttribute="bottom" id="jCC-L7-5nj"/>
+                            <constraint firstAttribute="bottom" secondItem="HTL-pI-Beg" secondAttribute="bottom" constant="10" id="jCC-L7-5nj"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -51,8 +51,8 @@
                     <constraint firstAttribute="trailing" secondItem="e7P-3X-zSZ" secondAttribute="trailing" constant="75" id="1Zx-Mu-m2R"/>
                     <constraint firstItem="e7P-3X-zSZ" firstAttribute="leading" secondItem="lq6-bD-Rvg" secondAttribute="trailing" constant="5" id="Xlq-Lj-cct"/>
                     <constraint firstAttribute="bottom" secondItem="lq6-bD-Rvg" secondAttribute="bottom" id="iyl-XB-5mm"/>
-                    <constraint firstItem="e7P-3X-zSZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="lfl-50-8LK"/>
-                    <constraint firstAttribute="bottom" secondItem="e7P-3X-zSZ" secondAttribute="bottom" constant="20" id="uwG-Kg-pdb"/>
+                    <constraint firstItem="e7P-3X-zSZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="lfl-50-8LK"/>
+                    <constraint firstAttribute="bottom" secondItem="e7P-3X-zSZ" secondAttribute="bottom" constant="7.5" id="uwG-Kg-pdb"/>
                     <constraint firstItem="lq6-bD-Rvg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="x52-BP-iv2"/>
                 </constraints>
             </tableViewCellContentView>

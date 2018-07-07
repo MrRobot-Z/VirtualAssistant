@@ -100,10 +100,10 @@
 				CE1FE1C420F0994100F14C31 /* Custom Cells */,
 				CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */,
 				CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */,
-				CE0B4A6020EB5B7C007FD989 /* Info.plist */,
 				CEE1652320EB8A1E00401780 /* WitModule.swift */,
 				CEE6159320EC520400FAD776 /* Common.swift */,
 				CEE6159720EC5A7F00FAD776 /* Functionalties */,
+				CE0B4A6020EB5B7C007FD989 /* Info.plist */,
 			);
 			path = VirtualAssistant;
 			sourceTree = "<group>";
