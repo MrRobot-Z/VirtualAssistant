@@ -11,6 +11,7 @@ class Common {
     
     // UI Constants
     static let userCell = "User_Send_Cell"
+    static let botCell = "Bot_Send_Cell"
     
     static let threshold : Double = 0.8
     

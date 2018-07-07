@@ -47,9 +47,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func configureTableView(){
         
         tableView.register(UINib(nibName: "UserSendCell", bundle: nil), forCellReuseIdentifier: Common.userCell)
+        tableView.register(UINib(nibName: "BotSendCell", bundle: nil), forCellReuseIdentifier: Common.botCell)
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 120
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         
     }
     
@@ -62,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Common.userCell, for: indexPath) as! UserSendCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Common.botCell, for: indexPath) as! BotSendCell
         
         cell.label.text = history[indexPath.row]
         cell.containerView.layer.cornerRadius = 15
@@ -79,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //
 //
 //        cell.containerView.layer.masksToBounds = true
-        
+        cell.imView.layer.cornerRadius  = 20
 
         
         
