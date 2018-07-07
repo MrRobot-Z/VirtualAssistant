@@ -67,9 +67,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.label.text = history[indexPath.row]
         cell.containerView.layer.cornerRadius = 15
         
+        let size = CGSize(width: 250, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let estimateFrame = NSString(string: history[indexPath.row]).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)], context: nil)
+        
+        cell.label.numberOfLines = 0
+        cell.label.frame = CGRect(x: self.view.frame.width - estimateFrame.width, y: 0, width: estimateFrame.width + 16, height: estimateFrame.height + 20)
+        
+        
+        cell.containerView.frame = CGRect(x: self.view.frame.width - estimateFrame.width - 25, y: 0, width: estimateFrame.width + 16 + 8, height: estimateFrame.height + 20)
+        
+        
+        cell.containerView.layer.masksToBounds = true
+        
+
+        
+        
+        
         return cell
         
     }
+    
     
     func showToast(message : String) {
         
