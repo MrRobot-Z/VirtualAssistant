@@ -12,9 +12,9 @@ import SwiftyJSON
 
 protocol BaseFunctionality {
     
-    func processResponse(response :JSON) -> Void
-    
     func whatNextState(response :JSON) -> BaseFunctionality?
+    
+    func processResponse(response :JSON) -> Void
     
 }
 

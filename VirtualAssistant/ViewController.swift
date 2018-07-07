@@ -10,8 +10,11 @@ import UIKit
 import SwiftyJSON
 
 
-
-class ViewController: UIViewController ,WitDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WitDelegate{
+    
+    var history = ["Hey man how's it going??", "أقدر اساعدك ازاى؟", "فى حاجة تانية ممكن اعملهالك؟", "Shit duuuuuuuUPDATE: We have added the new iPhone X, iPhone 8 and iPhone 8 Plus to the guide below. To learn more about the unique screen of iPhone X, check out our new iPhone X Screen Demystified article.uuuude that's dope", "Sup with the whacky playstation sup"]
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
@@ -25,14 +28,47 @@ class ViewController: UIViewController ,WitDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        wit.delegate = self
+        connectDelegates()
+        
+        configureTableView()
         
         state = ReadyState()
     }
+    
+    // MARK: Connect all needed Delegates to self
+    func connectDelegates(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        wit.delegate = self
+    }
+    
+    
+    func configureTableView(){
+        
+        tableView.register(UINib(nibName: "UserSendCell", bundle: nil), forCellReuseIdentifier: Common.userCell)
+        
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 120
+        
+    }
+    
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: Table View Delegate functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return history.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Common.userCell, for: indexPath) as! UserSendCell
+        
+        cell.label.text = history[indexPath.row]
+        cell.containerView.layer.cornerRadius = 15
+        
+        return cell
+        
     }
     
     func showToast(message : String) {

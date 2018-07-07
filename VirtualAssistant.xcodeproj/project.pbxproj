@@ -12,6 +12,8 @@
 		CE0B4A5A20EB5B7B007FD989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5820EB5B7B007FD989 /* Main.storyboard */; };
 		CE0B4A5C20EB5B7C007FD989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */; };
 		CE0B4A5F20EB5B7C007FD989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */; };
+		CE1FE1C720F099B500F14C31 /* UserSendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE1C520F099B500F14C31 /* UserSendCell.swift */; };
+		CE1FE1C820F099B500F14C31 /* UserSendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE1C620F099B500F14C31 /* UserSendCell.xib */; };
 		CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1652320EB8A1E00401780 /* WitModule.swift */; };
 		CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */; };
 		CEE6159420EC520400FAD776 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159320EC520400FAD776 /* Common.swift */; };
@@ -29,6 +31,8 @@
 		CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0B4A5E20EB5B7C007FD989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0B4A6020EB5B7C007FD989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1FE1C520F099B500F14C31 /* UserSendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSendCell.swift; sourceTree = "<group>"; };
+		CE1FE1C620F099B500F14C31 /* UserSendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSendCell.xib; sourceTree = "<group>"; };
 		CEE1652320EB8A1E00401780 /* WitModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitModule.swift; sourceTree = "<group>"; };
 		CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightFunctionality.swift; sourceTree = "<group>"; };
 		CEE6159320EC520400FAD776 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -89,14 +93,24 @@
 				CE0B4A5420EB5B7B007FD989 /* AppDelegate.swift */,
 				CE0B4A5620EB5B7B007FD989 /* ViewController.swift */,
 				CE0B4A5820EB5B7B007FD989 /* Main.storyboard */,
+				CE1FE1C420F0994100F14C31 /* Custom Cells */,
 				CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */,
 				CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */,
 				CE0B4A6020EB5B7C007FD989 /* Info.plist */,
 				CEE1652320EB8A1E00401780 /* WitModule.swift */,
-				CEE6159720EC5A7F00FAD776 /* Functionalties */,
 				CEE6159320EC520400FAD776 /* Common.swift */,
+				CEE6159720EC5A7F00FAD776 /* Functionalties */,
 			);
 			path = VirtualAssistant;
+			sourceTree = "<group>";
+		};
+		CE1FE1C420F0994100F14C31 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FE1C520F099B500F14C31 /* UserSendCell.swift */,
+				CE1FE1C620F099B500F14C31 /* UserSendCell.xib */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		CEE6159720EC5A7F00FAD776 /* Functionalties */ = {
@@ -170,6 +184,7 @@
 			files = (
 				CE0B4A5F20EB5B7C007FD989 /* LaunchScreen.storyboard in Resources */,
 				CE0B4A5C20EB5B7C007FD989 /* Assets.xcassets in Resources */,
+				CE1FE1C820F099B500F14C31 /* UserSendCell.xib in Resources */,
 				CE0B4A5A20EB5B7B007FD989 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +243,7 @@
 				CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */,
 				CEE6159420EC520400FAD776 /* Common.swift in Sources */,
 				CE0B4A5520EB5B7B007FD989 /* AppDelegate.swift in Sources */,
+				CE1FE1C720F099B500F14C31 /* UserSendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

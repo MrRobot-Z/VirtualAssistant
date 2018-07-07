@@ -9,6 +9,9 @@
 
 class Common {
     
+    // UI Constants
+    static let userCell = "User_Send_Cell"
+    
     static let threshold : Double = 0.8
     
     static let witOriginalMessage : String = "_text"
@@ -23,7 +26,7 @@ class Common {
     static let flashlightOnIntent : String = "flash_on"
     static let flashlightOffIntent : String = "flash_off"
     
-        
+    
     
     
 }
