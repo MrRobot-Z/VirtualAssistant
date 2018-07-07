@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WitDelegate{
     
-    var history = ["Hey man how's it going??", "أقدر اساعدك ازاى؟", "فى حاجة تانية ممكن اعملهالك؟", "Shit duuuuuuuUPDATE: We have added the new iPhone X, iPhone 8 and iPhone 8 Plus to the guide below. To learn more about the unique screen of iPhone X, check out our new iPhone X Screen Demystified article.uuuude that's dope", "Sup with the whacky playstation sup"]
+    var history = ["Hey man how's it going??", "أقدر اساعدك ازاى؟", "فى حاجة تانية ممكن اعملهالك؟", "شباب عايزين نشكر كل الناس ال قدمت و كانت عايزة تشترك في المسابقة , الاختيار كان صعب جدا نظرا لان كل الteams كويسة جدا بس للاسف احنا كنا محكومين بعدد معين نختاره , الفايل ده فيه اسامي الteams الaccepted , احنا عاملين waiting list علشان لو اي تيم اعتذر من الفايل ده, الناس ال مكانش ليها حظ احنا هنفتح registration للناس ال عايزه تيجي تحضر الworkshops و الpanel discussions و تحضر الايام كاملة , الregistration ده هيكون بعدد محدود جدا و هيبقي الاولوية للناس ال كانت مقدمة و متقبلتش", "Shit duuuuuuuUPDATE: We have added the new iPhone X, iPhone 8 and iPhone 8 Plus to the guide below. To learn more about the unique screen of iPhone X, check out our new iPhone X Screen Demystified article.uuuude that's dope", "Sup with the whacky playstation sup"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -67,18 +67,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.label.text = history[indexPath.row]
         cell.containerView.layer.cornerRadius = 15
         
-        let size = CGSize(width: 250, height: 1000)
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        let estimateFrame = NSString(string: history[indexPath.row]).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)], context: nil)
-        
-        cell.label.numberOfLines = 0
-        cell.label.frame = CGRect(x: self.view.frame.width - estimateFrame.width, y: 0, width: estimateFrame.width + 16, height: estimateFrame.height + 20)
-        
-        
-        cell.containerView.frame = CGRect(x: self.view.frame.width - estimateFrame.width - 25, y: 0, width: estimateFrame.width + 16 + 8, height: estimateFrame.height + 20)
-        
-        
-        cell.containerView.layer.masksToBounds = true
+//        let size = CGSize(width: 250, height: 1000)
+//        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+//        let estimateFrame = NSString(string: history[indexPath.row]).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)], context: nil)
+//
+//        cell.label.numberOfLines = 0
+//        cell.label.frame = CGRect(x: self.view.frame.width - estimateFrame.width, y: 0, width: estimateFrame.width + 16, height: estimateFrame.height + 20)
+//
+//
+//        cell.containerView.frame = CGRect(x: self.view.frame.width - estimateFrame.width - 25, y: 0, width: estimateFrame.width + 16 + 8, height: estimateFrame.height + 20)
+//
+//
+//        cell.containerView.layer.masksToBounds = true
         
 
         
