@@ -42,10 +42,8 @@ class FlashlightFunctionality : BaseFunctionality{
                 try device.lockForConfiguration()
                 
                 if on {
-                    print("Turning Torch on")
                     device.torchMode = .on
                 } else {
-                    print("Turning Torch off")
                     device.torchMode = .off
                 }
                 

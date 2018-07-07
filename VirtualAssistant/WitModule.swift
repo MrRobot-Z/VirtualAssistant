@@ -20,7 +20,6 @@ class WitModule{
     var delegate: WitDelegate?
     
     let baseURL = "https://api.wit.ai/message"
-    //let witAppToken = " Bearer EDM7POFMZLZ6H2OB253HNBAVYPBKW2RC"
     let witAppToken = " Bearer AAP6LXNLDDYAAPZKEITCHO3UT4DGUCRC"
     
     let date = "1/7/2018"

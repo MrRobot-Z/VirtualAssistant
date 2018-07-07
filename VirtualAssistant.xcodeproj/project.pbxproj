@@ -16,10 +16,12 @@
 		CE1FE1C820F099B500F14C31 /* UserSendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE1C620F099B500F14C31 /* UserSendCell.xib */; };
 		CE1FE1CB20F0C9B000F14C31 /* BotSendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE1C920F0C9B000F14C31 /* BotSendCell.swift */; };
 		CE1FE1CC20F0C9B000F14C31 /* BotSendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE1CA20F0C9B000F14C31 /* BotSendCell.xib */; };
+		CE50A36F20F13B9E00393F22 /* SpeechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A36E20F13B9E00393F22 /* SpeechModule.swift */; };
 		CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1652320EB8A1E00401780 /* WitModule.swift */; };
 		CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */; };
 		CEE6159420EC520400FAD776 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159320EC520400FAD776 /* Common.swift */; };
 		CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159520EC5A2C00FAD776 /* ReadyState.swift */; };
+		CEEEA9BC20F120C900723F25 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEA9BB20F120C900723F25 /* Message.swift */; };
 		F922DF93842651E46F03BED2 /* Pods_VirtualAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +39,12 @@
 		CE1FE1C620F099B500F14C31 /* UserSendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSendCell.xib; sourceTree = "<group>"; };
 		CE1FE1C920F0C9B000F14C31 /* BotSendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotSendCell.swift; sourceTree = "<group>"; };
 		CE1FE1CA20F0C9B000F14C31 /* BotSendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BotSendCell.xib; sourceTree = "<group>"; };
+		CE50A36E20F13B9E00393F22 /* SpeechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechModule.swift; sourceTree = "<group>"; };
 		CEE1652320EB8A1E00401780 /* WitModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitModule.swift; sourceTree = "<group>"; };
 		CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightFunctionality.swift; sourceTree = "<group>"; };
 		CEE6159320EC520400FAD776 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CEE6159520EC5A2C00FAD776 /* ReadyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyState.swift; sourceTree = "<group>"; };
+		CEEEA9BB20F120C900723F25 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D6B4F58EFE8EBED0889AE7CE /* Pods_VirtualAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,15 +98,9 @@
 		CE0B4A5320EB5B7B007FD989 /* VirtualAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				CE0B4A5420EB5B7B007FD989 /* AppDelegate.swift */,
-				CE0B4A5620EB5B7B007FD989 /* ViewController.swift */,
-				CE0B4A5820EB5B7B007FD989 /* Main.storyboard */,
-				CE1FE1C420F0994100F14C31 /* Custom Cells */,
-				CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */,
-				CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */,
-				CEE1652320EB8A1E00401780 /* WitModule.swift */,
-				CEE6159320EC520400FAD776 /* Common.swift */,
-				CEE6159720EC5A7F00FAD776 /* Functionalties */,
+				CEEEA9BD20F1215B00723F25 /* Controller */,
+				CEEEA9BA20F1209A00723F25 /* Model */,
+				CEEEA9B720F1200D00723F25 /* View */,
 				CE0B4A6020EB5B7C007FD989 /* Info.plist */,
 			);
 			path = VirtualAssistant;
@@ -126,6 +124,38 @@
 				CEE6159520EC5A2C00FAD776 /* ReadyState.swift */,
 			);
 			path = Functionalties;
+			sourceTree = "<group>";
+		};
+		CEEEA9B720F1200D00723F25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE0B4A5820EB5B7B007FD989 /* Main.storyboard */,
+				CE1FE1C420F0994100F14C31 /* Custom Cells */,
+				CE0B4A5B20EB5B7C007FD989 /* Assets.xcassets */,
+				CE0B4A5D20EB5B7C007FD989 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CEEEA9BA20F1209A00723F25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEEEA9BB20F120C900723F25 /* Message.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CEEEA9BD20F1215B00723F25 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE0B4A5420EB5B7B007FD989 /* AppDelegate.swift */,
+				CE0B4A5620EB5B7B007FD989 /* ViewController.swift */,
+				CEE1652320EB8A1E00401780 /* WitModule.swift */,
+				CE50A36E20F13B9E00393F22 /* SpeechModule.swift */,
+				CEE6159320EC520400FAD776 /* Common.swift */,
+				CEE6159720EC5A7F00FAD776 /* Functionalties */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */,
+				CE50A36F20F13B9E00393F22 /* SpeechModule.swift in Sources */,
 				CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */,
 				CE0B4A5720EB5B7B007FD989 /* ViewController.swift in Sources */,
+				CEEEA9BC20F120C900723F25 /* Message.swift in Sources */,
 				CE1FE1CB20F0C9B000F14C31 /* BotSendCell.swift in Sources */,
 				CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */,
 				CEE6159420EC520400FAD776 /* Common.swift in Sources */,

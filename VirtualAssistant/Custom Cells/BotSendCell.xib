@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="lq6-bD-Rvg">
-                        <rect key="frame" x="0.0" y="59.666666666666657" width="40" height="40"/>
+                        <rect key="frame" x="0.0" y="52.333333333333343" width="40" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Yd3-2X-mv0"/>
@@ -32,7 +32,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-pI-Beg">
                                 <rect key="frame" x="15" y="10" width="250" height="64.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -50,7 +50,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="e7P-3X-zSZ" secondAttribute="trailing" constant="75" id="1Zx-Mu-m2R"/>
                     <constraint firstItem="e7P-3X-zSZ" firstAttribute="leading" secondItem="lq6-bD-Rvg" secondAttribute="trailing" constant="5" id="Xlq-Lj-cct"/>
-                    <constraint firstAttribute="bottom" secondItem="lq6-bD-Rvg" secondAttribute="bottom" id="iyl-XB-5mm"/>
+                    <constraint firstAttribute="bottom" secondItem="lq6-bD-Rvg" secondAttribute="bottom" constant="7.5" id="iyl-XB-5mm"/>
                     <constraint firstItem="e7P-3X-zSZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="lfl-50-8LK"/>
                     <constraint firstAttribute="bottom" secondItem="e7P-3X-zSZ" secondAttribute="bottom" constant="7.5" id="uwG-Kg-pdb"/>
                     <constraint firstItem="lq6-bD-Rvg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="x52-BP-iv2"/>

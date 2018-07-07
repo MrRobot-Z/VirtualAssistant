@@ -29,15 +29,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4a-4t-jAY" userLabel="Bottom_View">
                                 <rect key="frame" x="0.0" y="616" width="414" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0O-9u-QXa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0O-9u-QXa" userLabel="MicButton">
                                         <rect key="frame" x="169" y="22.333333333333371" width="76" height="76"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="76" id="IN1-dx-3yD"/>
                                             <constraint firstAttribute="height" constant="76" id="UfN-TJ-TZs"/>
                                         </constraints>
                                         <state key="normal" image="Mic_off"/>
+                                        <connections>
+                                            <action selector="micButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BGU-XJ-aac"/>
+                                            <outletCollection property="gestureRecognizers" destination="Rn0-D6-c3Q" appends="YES" id="Yw5-9h-fhU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-zK-Gpm">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-zK-Gpm" userLabel="Keyboard Button">
                                         <rect key="frame" x="12" y="68" width="45" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pN4-Uf-zYd"/>
@@ -71,10 +76,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="keyboardButton" destination="Z6A-zK-Gpm" id="zOZ-Xf-nxX"/>
+                        <outlet property="micButton" destination="L0O-9u-QXa" id="fb2-Nr-l7A"/>
                         <outlet property="tableView" destination="a6f-5V-kT3" id="L6s-JW-K5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Rn0-D6-c3Q">
+                    <connections>
+                        <action selector="micButtonHold:" destination="BYZ-38-t0r" id="dJD-eT-nyu"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.39130434782609" y="118.20652173913044"/>
         </scene>

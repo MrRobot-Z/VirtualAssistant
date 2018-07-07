@@ -13,6 +13,11 @@ class Common {
     static let userCell = "User_Send_Cell"
     static let botCell = "Bot_Send_Cell"
     
+    static let micOnIcon = "Mic_on"
+    static let micOffIcon = "Mic_off"
+    
+    
+    // Wit Constants
     static let threshold : Double = 0.8
     
     static let witOriginalMessage : String = "_text"
