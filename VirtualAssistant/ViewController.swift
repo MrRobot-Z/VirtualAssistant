@@ -10,11 +10,12 @@ import UIKit
 import SwiftyJSON
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SpeechDelegate, WitDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SpeechDelegate, WitDelegate, ChatDelegate{
     
     // MARK: Core Class Properties/Variables
     //*****************************************************
-    var history = ["أنا جلادوس ... شبيك لبيك" , "اظبطى المنبه", "....", "يوووووه نسيت انك مبتعرفيش تظبطى المنبه", "انت هتذلنى ياعنى... طيييييييييب بكره هكبر واضربك و هخليك انت اللى تظبتلى المنبه كل يوم و خليك فاكر Machines will rise "]
+    
+    var history : [Message] = [Message]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,6 +40,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         configureTableView()
         
         state = ReadyState()
+        
+        presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
     }
     
     
@@ -73,11 +76,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row % 2 ==  1{
+        if history[indexPath.row].isUserSender{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Common.userCell, for: indexPath) as! UserSendCell
             
-            cell.label.text = history[indexPath.row]
+            cell.label.text = history[indexPath.row].messageText
             cell.containerView.layer.cornerRadius = 12
             return cell
             
@@ -86,7 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Common.botCell, for: indexPath) as! BotSendCell
             
-            cell.label.text = history[indexPath.row]
+            cell.label.text = history[indexPath.row].messageText
             cell.containerView.layer.cornerRadius = 12
             cell.imView.layer.cornerRadius  = 20
             return cell
@@ -99,6 +102,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //*****************************************************
     func recieveText(heardText: String) {
         print("SR recieved .... \(heardText)")
+        presentInChat(text: heardText, fromUser: true)
     }
     
     
@@ -139,11 +143,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
     
+    //MARK: Chat Delegate Functions
+    //*****************************************************
+    func presentInChat(text: String, fromUser: Bool) {
+        let newMessage = Message(text: text, isUser: fromUser)
+        
+        history.append(newMessage)
+    }
+    
+    func presentInToast(text: String) {
+        showToast(message: text)
+    }
+    
     
     //MARK: UI IB Actions functions
     //*****************************************************
     @IBAction func micButtonPressed(_ sender: UIButton) {
-        
         isRecording = !isRecording
         spr.toggleSpeechRecognition()
         
@@ -169,6 +184,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             micButton.setImage(UIImage(named: Common.micOffIcon), for: .normal)
         }
     }
+    
+    
+    @IBAction func keyboardButtonPressed(_ sender: UIButton) {
+        presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
+    }
+    
     
 }
 

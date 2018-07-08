@@ -49,6 +49,9 @@
                                             <constraint firstAttribute="width" constant="45" id="ujj-jJ-aQe"/>
                                         </constraints>
                                         <state key="normal" image="Show_keyboard"/>
+                                        <connections>
+                                            <action selector="keyboardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngj-kv-wjU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -6,6 +6,11 @@
 //  Copyright © 2018 MZaher. All rights reserved.
 //
 
+protocol ChatDelegate {
+    func presentInChat(text: String, fromUser: Bool) -> Void
+    
+    func presentInToast(text: String) -> Void
+}
 
 class Common {
     
