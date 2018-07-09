@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         spr.delegate = self
         wit.delegate = self
-
+        
     }
     
     
@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-
+    
     // MARK: Table View Delegate functions
     //*****************************************************
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         presentInChat(text: incomingText, fromUser: true)
         
         SVProgressHUD.show()
-        
+        print("showing hud .... \(incomingText)")
         wit.witNetwork(toBeSentString: incomingText)
     }
     
@@ -168,20 +168,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: Keyboard Notification Handling Function
     //*****************************************************
     @objc func keyboardHandler(notification: NSNotification) {
-
+        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
             
             self.bottomPinningConstraint.constant = isKeyboardShowing ? -1 * keyboardSize.height : 0
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
-            }) { (isSuccess) in
-                
-                if isKeyboardShowing{
-                    let indexPath = IndexPath(row: self.history.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-                }
-            }
+            })
+            //            { (isSuccess) in
+            //
+            //                if isKeyboardShowing{
+            //                    let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+            //                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            //                }
+            //            }
         }
     }
     
@@ -193,6 +194,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let newMessage = Message(text: text, isUser: fromUser)
         
         history.append(newMessage)
+        print(history)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
     }
     
     func presentInToast(text: String) {
@@ -209,18 +215,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         // Test:
-//        var text = ""
-//        if isRecording{
-//            text = "افتح الفيسبوك"
-//        }
-//        else{
-//            text = "افتحيلى الواتس"
-//        }
-//        sendTextToWit(incomingText: text)
+        //        var text = ""
+        //        if isRecording{
+        //            text = "افتح الفيسبوك"
+        //        }
+        //        else{
+        //            text = "افتحيلى الواتس"
+        //        }
+        //        sendTextToWit(incomingText: text)
     }
     
     @IBAction func micButtonHold(_ sender: UILongPressGestureRecognizer) {
-    
+        
         if sender.state == .began{
             if isRecording { return }
             micButton.sendActions(for: .touchUpInside)
@@ -246,10 +252,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func keyboardButtonPressed(_ sender: UIButton) {
-        
         isVoiceMode = !isVoiceMode
         
         DispatchQueue.main.async {
+            print("in here .... \(self.isVoiceMode)")
             
             if self.isVoiceMode {
                 
