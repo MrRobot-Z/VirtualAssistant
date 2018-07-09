@@ -38,7 +38,11 @@ class ReadyState : BaseFunctionality{
         if intent == Common.flashlightOnIntent || intent == Common.flashlightOffIntent{
             newState = FlashlightFunctionality()
         }
-        
+            
+        else if intent == Common.openApps{
+            newState = OpenAppsFunctionality()
+        }
+            
         else{
             print("No Recognizable intent found")
             newState = self

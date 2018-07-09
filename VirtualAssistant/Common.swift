@@ -39,7 +39,17 @@ class Common {
     static let flashlightOnIntent : String = "flash_on"
     static let flashlightOffIntent : String = "flash_off"
     
+    static let openApps : String = "open_apps"
+    static let openLog : String = "call_log_show"
+    static let openContacts : String = "contacts_show"
+    static let openSMS : String = "sms_show"
+    static let openMusic : String = "music"
+    static let openCamera : String = "camera"
+    static let openPhotos : String = "gallery"
     
+    static let googleSearch : String = "google_search"
     
+    // Other Entities
+    static let appName : String = "app_name"
     
 }

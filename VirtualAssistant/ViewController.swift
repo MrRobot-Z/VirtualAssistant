@@ -176,8 +176,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             UIView.animate(withDuration: 0.5, animations: {
                 self.view.layoutIfNeeded()
             }) { (isSuccess) in
-                let indexPath = IndexPath(row: self.history.count - 1, section: 0)
-                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                
+                if isKeyboardShowing{
+                    let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                }
             }
         }
     }
@@ -196,16 +199,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         showToast(message: text)
     }
     
-    var x = 1
+    
     //MARK: UI IB Actions functions
     //*****************************************************
     @IBAction func micButtonPressed(_ sender: UIButton) {
         isRecording = !isRecording
         updateUIMicButton()
-        //spr.toggleSpeechRecognition()
+        spr.toggleSpeechRecognition()
         
-        presentInChat(text: "hello...\(x)", fromUser: true)
-        x += 1
         
         // Test:
 //        var text = ""
@@ -213,7 +214,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            text = "افتح الفيسبوك"
 //        }
 //        else{
-//            text = "افتح الفلاش"
+//            text = "افتحيلى الواتس"
 //        }
 //        sendTextToWit(incomingText: text)
     }
