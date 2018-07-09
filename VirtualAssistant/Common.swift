@@ -20,6 +20,8 @@ class Common {
     
     static let micOnIcon = "Mic_on"
     static let micOffIcon = "Mic_off"
+    static let showKeyboard = "Show_keyboard"
+    static let dismissKeyboard = "Dismiss_keyboard"
     
     
     // Wit Constants

@@ -131,6 +131,7 @@ class SpeechModule : NSObject, SFSpeechRecognizerDelegate{
     }
     
     func toggleSpeechRecognition() {
+        print("speech toggle function .... \(speechEnabled)")
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()

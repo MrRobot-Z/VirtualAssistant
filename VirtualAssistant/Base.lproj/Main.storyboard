@@ -53,10 +53,42 @@
                                             <action selector="keyboardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngj-kv-wjU"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQH-MR-Cxi" userLabel="Input Text View">
+                                        <rect key="frame" x="87" y="0.0" width="327" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-N0-ObY">
+                                                <rect key="frame" x="8" y="49" width="27" height="22"/>
+                                                <state key="normal" image="Sendbtn"/>
+                                                <connections>
+                                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2N8-Vs-RVc"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="اكتب رسالة !" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oe6-T1-i0S">
+                                                <rect key="frame" x="50" y="45" width="230" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="67h-Bs-TQP"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Oe6-T1-i0S" firstAttribute="leading" secondItem="TEO-N0-ObY" secondAttribute="trailing" constant="15" id="Qpq-H8-Nf6"/>
+                                            <constraint firstItem="Oe6-T1-i0S" firstAttribute="centerY" secondItem="vQH-MR-Cxi" secondAttribute="centerY" id="XNf-8M-Tkr"/>
+                                            <constraint firstItem="TEO-N0-ObY" firstAttribute="centerY" secondItem="vQH-MR-Cxi" secondAttribute="centerY" id="YkR-Xg-vr5"/>
+                                            <constraint firstItem="TEO-N0-ObY" firstAttribute="leading" secondItem="vQH-MR-Cxi" secondAttribute="leading" constant="8" id="pMt-FK-qIS"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vQH-MR-Cxi" secondAttribute="trailing" id="Gla-pT-jcc"/>
                                     <constraint firstAttribute="height" constant="120" id="Muf-aa-sfF"/>
+                                    <constraint firstItem="vQH-MR-Cxi" firstAttribute="leading" secondItem="Z6A-zK-Gpm" secondAttribute="trailing" constant="30" id="QNv-qo-cRT"/>
+                                    <constraint firstItem="vQH-MR-Cxi" firstAttribute="top" secondItem="G4a-4t-jAY" secondAttribute="top" id="TIt-Wr-unv"/>
                                     <constraint firstItem="L0O-9u-QXa" firstAttribute="centerX" secondItem="G4a-4t-jAY" secondAttribute="centerX" id="VrX-Sv-wuT"/>
+                                    <constraint firstAttribute="bottom" secondItem="vQH-MR-Cxi" secondAttribute="bottom" id="ZNe-ot-Eht"/>
                                     <constraint firstAttribute="bottom" secondItem="Z6A-zK-Gpm" secondAttribute="bottom" constant="12" id="bmA-wa-VrA"/>
                                     <constraint firstItem="L0O-9u-QXa" firstAttribute="centerY" secondItem="G4a-4t-jAY" secondAttribute="centerY" id="dZO-fn-vRd"/>
                                     <constraint firstItem="Z6A-zK-Gpm" firstAttribute="leading" secondItem="G4a-4t-jAY" secondAttribute="leading" constant="12" id="ekJ-hk-AIz"/>
@@ -79,9 +111,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomPinningConstraint" destination="V5f-Re-D5F" id="aUe-i9-tEd"/>
                         <outlet property="keyboardButton" destination="Z6A-zK-Gpm" id="zOZ-Xf-nxX"/>
+                        <outlet property="keyboardView" destination="vQH-MR-Cxi" id="voS-eg-nbv"/>
                         <outlet property="micButton" destination="L0O-9u-QXa" id="fb2-Nr-l7A"/>
+                        <outlet property="sendButton" destination="TEO-N0-ObY" id="Qkf-bI-fWt"/>
                         <outlet property="tableView" destination="a6f-5V-kT3" id="L6s-JW-K5E"/>
+                        <outlet property="textField" destination="Oe6-T1-i0S" id="rzj-Yn-yEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,6 +133,7 @@
     <resources>
         <image name="Background" width="540" height="960"/>
         <image name="Mic_off" width="77" height="76"/>
+        <image name="Sendbtn" width="27" height="22"/>
         <image name="Show_keyboard" width="46" height="40"/>
     </resources>
 </document>

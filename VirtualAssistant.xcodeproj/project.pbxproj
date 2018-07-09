@@ -17,6 +17,7 @@
 		CE1FE1CB20F0C9B000F14C31 /* BotSendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE1C920F0C9B000F14C31 /* BotSendCell.swift */; };
 		CE1FE1CC20F0C9B000F14C31 /* BotSendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE1CA20F0C9B000F14C31 /* BotSendCell.xib */; };
 		CE50A36F20F13B9E00393F22 /* SpeechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50A36E20F13B9E00393F22 /* SpeechModule.swift */; };
+		CE6D73E920F307F400C76FF8 /* OpenAppsFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D73E820F307F400C76FF8 /* OpenAppsFunctionality.swift */; };
 		CEE1652420EB8A1E00401780 /* WitModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1652320EB8A1E00401780 /* WitModule.swift */; };
 		CEE6159220EC482D00FAD776 /* FlashlightFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */; };
 		CEE6159420EC520400FAD776 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6159320EC520400FAD776 /* Common.swift */; };
@@ -40,6 +41,7 @@
 		CE1FE1C920F0C9B000F14C31 /* BotSendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotSendCell.swift; sourceTree = "<group>"; };
 		CE1FE1CA20F0C9B000F14C31 /* BotSendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BotSendCell.xib; sourceTree = "<group>"; };
 		CE50A36E20F13B9E00393F22 /* SpeechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechModule.swift; sourceTree = "<group>"; };
+		CE6D73E820F307F400C76FF8 /* OpenAppsFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppsFunctionality.swift; sourceTree = "<group>"; };
 		CEE1652320EB8A1E00401780 /* WitModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitModule.swift; sourceTree = "<group>"; };
 		CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashlightFunctionality.swift; sourceTree = "<group>"; };
 		CEE6159320EC520400FAD776 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				CEE6159120EC482D00FAD776 /* FlashlightFunctionality.swift */,
 				CEE6159520EC5A2C00FAD776 /* ReadyState.swift */,
+				CE6D73E820F307F400C76FF8 /* OpenAppsFunctionality.swift */,
 			);
 			path = Functionalties;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				CEE6159620EC5A2C00FAD776 /* ReadyState.swift in Sources */,
 				CEE6159420EC520400FAD776 /* Common.swift in Sources */,
 				CE0B4A5520EB5B7B007FD989 /* AppDelegate.swift in Sources */,
+				CE6D73E920F307F400C76FF8 /* OpenAppsFunctionality.swift in Sources */,
 				CE1FE1C720F099B500F14C31 /* UserSendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

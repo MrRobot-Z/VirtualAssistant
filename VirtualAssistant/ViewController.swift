@@ -26,10 +26,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var keyboardButton: UIButton!
+    @IBOutlet weak var keyboardView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var bottomPinningConstraint: NSLayoutConstraint!
     
     // MARK: Data relaying Class Properties/Variables
     //*****************************************************
     var isRecording = false
+    
+    var isVoiceMode = true
     
     
     override func viewDidLoad() {
@@ -42,10 +48,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         state = ReadyState()
         
         presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHandler), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHandler), name: .UIKeyboardWillHide, object: nil)
     }
     
     
+    
     // MARK: Connect all needed Delegates to self
+    // Except Delegate for Chat is set on the fly
     //*****************************************************
     func connectDelegates(){
         tableView.delegate = self
@@ -53,6 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         spr.delegate = self
         wit.delegate = self
+
     }
     
     
@@ -102,7 +114,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //*****************************************************
     func recieveText(heardText: String) {
         print("SR recieved .... \(heardText)")
-        presentInChat(text: heardText, fromUser: true)
+        
+        sendTextToWit(incomingText: heardText)
     }
     
     
@@ -111,16 +124,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func recieveResponse(response: JSON) {
         print("Here***********************************")
         print(response.rawString()!)
-        print(response.count)
         print(response[Common.witEntities][Common.witIntent][0][Common.value])
         print(response[Common.witEntities][Common.witIntent][0][Common.confidence])
-        showToast(message: "\(response[Common.witEntities][Common.witIntent][0][Common.value]) intent")
         
+        state?.delegate = self
         state = state?.whatNextState(response: response)
-        state?.processResponse(response: response)
+        state?.delegate = self
+        state = state?.processResponse(response: response)
     }
     
-    
+    func sendTextToWit(incomingText: String){
+        presentInChat(text: incomingText, fromUser: true)
+        
+        wit.witNetwork(toBeSentString: incomingText)
+    }
     
     //MARK: Toast  function
     //*****************************************************
@@ -143,9 +160,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
     
+    //MARK: Keyboard Notification Handling Function
+    //*****************************************************
+    @objc func keyboardHandler(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let isKeyboardShowing = notification.name == .UIKeyboardWillShow
+            UIView.animate(withDuration: 0.5) {
+                self.bottomPinningConstraint.constant = isKeyboardShowing ? -1 * keyboardSize.height : 0
+                self.view.layoutIfNeeded()
+            }
+            
+        }
+
+
+    }
+    
+    
     //MARK: Chat Delegate Functions
     //*****************************************************
     func presentInChat(text: String, fromUser: Bool) {
+        print("Drawing a new bubble")
         let newMessage = Message(text: text, isUser: fromUser)
         
         history.append(newMessage)
@@ -160,9 +195,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //*****************************************************
     @IBAction func micButtonPressed(_ sender: UIButton) {
         isRecording = !isRecording
-        spr.toggleSpeechRecognition()
-        
         updateUIMicButton()
+        //spr.toggleSpeechRecognition()
+        
+        // Test:
+        var text = ""
+        if isRecording{
+            text = "افتح الفيسبوك"
+        }
+        else{
+            text = "افتح الفلاش"
+        }
+        sendTextToWit(incomingText: text)
     }
     
     @IBAction func micButtonHold(_ sender: UILongPressGestureRecognizer) {
@@ -178,18 +222,62 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func updateUIMicButton(){
-        if isRecording{
-            micButton.setImage(UIImage(named: Common.micOnIcon), for: .normal)
-        } else {
-            micButton.setImage(UIImage(named: Common.micOffIcon), for: .normal)
+        
+        DispatchQueue.main.async {
+            if self.isRecording{
+                self.micButton.setImage(UIImage(named: Common.micOnIcon), for: .normal)
+                print("mic on icon")
+            } else {
+                self.micButton.setImage(UIImage(named: Common.micOffIcon), for: .normal)
+                print("mic off icon")
+            }
         }
     }
     
     
     @IBAction func keyboardButtonPressed(_ sender: UIButton) {
-        presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
+        
+        isVoiceMode = !isVoiceMode
+        
+        DispatchQueue.main.async {
+            
+            if self.isVoiceMode {
+                
+                self.keyboardButton.setImage(UIImage(named: Common.showKeyboard), for: .normal)
+                
+                self.keyboardView.isHidden = true
+                self.micButton.isHidden = false
+                
+                self.micButton.setImage(UIImage(named: Common.micOffIcon), for: .normal)
+                
+                self.textField.endEditing(true)
+                
+            } else {
+                self.keyboardButton.setImage(UIImage(named: Common.dismissKeyboard), for: .normal)
+                
+                self.keyboardView.isHidden = false
+                self.micButton.isHidden = true
+                
+            }
+            
+        }
+        
     }
     
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        
+        if textField.text!.isEmpty {return}
+        
+        
+        let text = textField.text!
+        textField.text = ""
+        print(text)
+        
+        keyboardButton.sendActions(for: .touchUpInside)
+        // Test
+        presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
+        
+    }
     
 }
 
