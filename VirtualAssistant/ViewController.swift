@@ -51,6 +51,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHandler), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHandler), name: .UIKeyboardWillHide, object: nil)
+        
+        //sendButton.layer.cornerRadius = 3
     }
     
     
@@ -166,8 +168,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
+            
+            self.bottomPinningConstraint.constant = isKeyboardShowing ? -1 * keyboardSize.height : 0
             UIView.animate(withDuration: 0.5) {
-                self.bottomPinningConstraint.constant = isKeyboardShowing ? -1 * keyboardSize.height : 0
                 self.view.layoutIfNeeded()
             }
             
@@ -196,17 +199,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func micButtonPressed(_ sender: UIButton) {
         isRecording = !isRecording
         updateUIMicButton()
-        //spr.toggleSpeechRecognition()
+        spr.toggleSpeechRecognition()
         
         // Test:
-        var text = ""
-        if isRecording{
-            text = "افتح الفيسبوك"
-        }
-        else{
-            text = "افتح الفلاش"
-        }
-        sendTextToWit(incomingText: text)
+//        var text = ""
+//        if isRecording{
+//            text = "افتح الفيسبوك"
+//        }
+//        else{
+//            text = "افتح الفلاش"
+//        }
+//        sendTextToWit(incomingText: text)
     }
     
     @IBAction func micButtonHold(_ sender: UILongPressGestureRecognizer) {
@@ -268,14 +271,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if textField.text!.isEmpty {return}
         
-        
         let text = textField.text!
         textField.text = ""
-        print(text)
+        sendTextToWit(incomingText: text)
         
         keyboardButton.sendActions(for: .touchUpInside)
-        // Test
-        presentInChat(text: "إزايك ؟ أقدر اساعدك إزاى؟؟", fromUser: false)
         
     }
     

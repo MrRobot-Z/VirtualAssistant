@@ -34,8 +34,6 @@ class FlashlightFunctionality : BaseFunctionality{
     func stateTorch(on: Bool) {
         print("Setting Torch to : \(on)")
         //Test:
-        print(delegate)
-        print("ya rab ysht8l b2a")
         delegate?.presentInChat(text: "تمام هفتح الفلاش", fromUser: false)
         guard let device = AVCaptureDevice.default(for: AVMediaType.video)
             else {
