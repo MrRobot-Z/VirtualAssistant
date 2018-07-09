@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-
+import SVProgressHUD
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SpeechDelegate, WitDelegate, ChatDelegate{
     
@@ -124,6 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: Wit Delegate functions
     //*****************************************************
     func recieveResponse(response: JSON) {
+        SVProgressHUD.dismiss()
         print("Here***********************************")
         print(response.rawString()!)
         print(response[Common.witEntities][Common.witIntent][0][Common.value])
@@ -137,6 +138,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func sendTextToWit(incomingText: String){
         presentInChat(text: incomingText, fromUser: true)
+        
+        SVProgressHUD.show()
         
         wit.witNetwork(toBeSentString: incomingText)
     }
@@ -276,7 +279,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         sendTextToWit(incomingText: text)
         
         keyboardButton.sendActions(for: .touchUpInside)
-        
     }
     
 }

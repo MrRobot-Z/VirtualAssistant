@@ -8,5 +8,6 @@ target 'VirtualAssistant' do
   # Pods for VirtualAssistant
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'SVProgressHUD'
 
 end
