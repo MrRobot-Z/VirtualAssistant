@@ -12,6 +12,7 @@ import SVProgressHUD
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SpeechDelegate, WitDelegate, ChatDelegate{
     
+    
     // MARK: Core Class Properties/Variables
     //*****************************************************
     
@@ -190,16 +191,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: Chat Delegate Functions
     //*****************************************************
     func presentInChat(text: String, fromUser: Bool) {
-        print("Drawing a new bubble")
         let newMessage = Message(text: text, isUser: fromUser)
-        
         history.append(newMessage)
-        print(history)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         
     }
+    
+    func promptUserForMoreInfo() {
+        micButton.sendActions(for: .touchUpInside)
+    }
+    
     
     func presentInToast(text: String) {
         showToast(message: text)
@@ -214,15 +217,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         spr.toggleSpeechRecognition()
         
         
-        // Test:
-        //        var text = ""
-        //        if isRecording{
-        //            text = "افتح الفيسبوك"
-        //        }
-        //        else{
-        //            text = "افتحيلى الواتس"
-        //        }
-        //        sendTextToWit(incomingText: text)
+         //Test:
+//                var text = "افتح الصور"
+//                sendTextToWit(incomingText: text)
     }
     
     @IBAction func micButtonHold(_ sender: UILongPressGestureRecognizer) {
@@ -255,8 +252,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         isVoiceMode = !isVoiceMode
         
         DispatchQueue.main.async {
-            print("in here .... \(self.isVoiceMode)")
-            
             if self.isVoiceMode {
                 
                 self.keyboardButton.setImage(UIImage(named: Common.showKeyboard), for: .normal)

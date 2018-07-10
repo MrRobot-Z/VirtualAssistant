@@ -33,8 +33,7 @@ class FlashlightFunctionality : BaseFunctionality{
     
     func stateTorch(on: Bool) {
         print("Setting Torch to : \(on)")
-        //Test:
-        delegate?.presentInChat(text: "تمام هفتح الفلاش", fromUser: false)
+
         guard let device = AVCaptureDevice.default(for: AVMediaType.video)
             else {
                 print("Guarded ... Couldn't initialize connection to AVCaptureDevice")
@@ -47,8 +46,10 @@ class FlashlightFunctionality : BaseFunctionality{
                 
                 if on {
                     device.torchMode = .on
+                    delegate?.presentInChat(text: "حاضر هشغل الفلاش", fromUser: false)
                 } else {
                     device.torchMode = .off
+                    delegate?.presentInChat(text: "حاضر هطفى الفلاش", fromUser: false)
                 }
                 
                 device.unlockForConfiguration()

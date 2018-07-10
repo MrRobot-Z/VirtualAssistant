@@ -10,6 +10,8 @@ protocol ChatDelegate {
     func presentInChat(text: String, fromUser: Bool) -> Void
     
     func presentInToast(text: String) -> Void
+    
+    func promptUserForMoreInfo() -> Void
 }
 
 class Common {

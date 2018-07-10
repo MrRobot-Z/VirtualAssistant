@@ -32,14 +32,21 @@ class ReadyState : BaseFunctionality{
         
         guard let confidence = response[Common.witEntities][Common.witIntent][0][Common.confidence].double else {return self}
         
-        if confidence < Common.threshold{print("Abort, Low Confidence"); return self}
+        if confidence < Common.threshold {
+            if intent == Common.openApps || intent == Common.openContacts || intent == Common.openPhotos || intent == Common.openSMS || intent == Common.openMusic{
+                print("Ignoring low confidence")
+            } else{
+                print("Abort, Low Confidence")
+                return self
+            }
+        }
         
         var newState: BaseFunctionality?
         if intent == Common.flashlightOnIntent || intent == Common.flashlightOffIntent{
             newState = FlashlightFunctionality()
         }
             
-        else if intent == Common.openApps{
+        else if intent == Common.openApps || intent == Common.openContacts || intent == Common.openPhotos || intent == Common.openSMS || intent == Common.openMusic {
             newState = OpenAppsFunctionality()
         }
             
