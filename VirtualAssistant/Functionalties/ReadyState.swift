@@ -49,6 +49,10 @@ class ReadyState : BaseFunctionality{
         else if intent == Common.openApps || intent == Common.openContacts || intent == Common.openPhotos || intent == Common.openSMS || intent == Common.openMusic {
             newState = OpenAppsFunctionality()
         }
+        
+        else if intent == Common.wifiOn || intent == Common.wifiOff || intent == Common.bluetoothOn || intent == Common.bluetoothOff || intent == Common.modeNormal || intent == Common.modeSilent || intent == Common.modeVibration{
+            newState = NonSupportedFunctionalities()
+        }
             
         else{
             print("No Recognizable intent found")

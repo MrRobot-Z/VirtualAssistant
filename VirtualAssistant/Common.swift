@@ -38,6 +38,9 @@ class Common {
     
     
     // Intents
+    static let confirm : String = "confirm"
+    static let cancel : String = "cancel"
+    
     static let flashlightOnIntent : String = "flash_on"
     static let flashlightOffIntent : String = "flash_off"
     
@@ -50,6 +53,19 @@ class Common {
     static let openPhotos : String = "gallery"
     
     static let googleSearch : String = "google_search"
+    
+    static let wifiOn : String = "wifi_on"
+    static let wifiOff : String = "wifi_off"
+    
+    static let bluetoothOn : String = "bluetooth_on"
+    static let bluetoothOff : String = "bluetooth_off"
+    
+    static let modeNormal : String = "mode_normal"
+    static let modeSilent : String = "mode_silent"
+    static let modeVibration : String = "mode_vibration"
+    
+    
+    
     
     // Other Entities
     static let appName : String = "app_name"

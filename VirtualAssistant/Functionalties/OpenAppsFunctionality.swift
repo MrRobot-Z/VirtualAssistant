@@ -45,6 +45,16 @@ class OpenAppsFunctionality: BaseFunctionality{
         appList["جوجل درايف"] = "googledrive://"
         appList["جوجل مابس"] = "googlemaps://"
         appList["جوجل كروم"] = "googlechrome://"
+        appList["الجي ميل"] = "googlegmail://"
+        appList["هانجوتس"] = "com.google.hangouts://"
+        appList["التروكولر"] = "truecaller://"
+        appList["شيرت"] = "shareit://"
+        appList["اوبر"] = "uber://"
+        appList["كريم"] = "careem://"
+        appList["شازام"] = "shazam://"
+        appList["كام سكانر"] = "camscanner://"
+        appList["فايبر"] = "viber://"
+        appList["رتريكا"] = "retrica://"
     }
     
     func whatNextState(response: JSON) -> BaseFunctionality {
@@ -100,9 +110,15 @@ class OpenAppsFunctionality: BaseFunctionality{
             
             if let appName = response[Common.witEntities][Common.appName][0][Common.value].string{
                 
+                let appNameConfidence = response[Common.witEntities][Common.appName][0][Common.confidence].double!
+                if appNameConfidence < Common.threshold {
+                    return ReadyState()
+                }
+                
+                
                 print(appName)
                 if appList.keys.contains(appName) {
-                    if UIApplication.shared.canOpenURL(URL(string:  appName)!){
+                    if UIApplication.shared.canOpenURL(URL(string:  appList[appName]!)!){
                         // MARK: Application Can be oppened
                         UIApplication.shared.openURL(URL(string: appList[appName]!)!)
                     } else{

@@ -214,8 +214,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func micButtonPressed(_ sender: UIButton) {
         isRecording = !isRecording
         updateUIMicButton()
-        spr.toggleSpeechRecognition()
         
+        
+        spr.toggleSpeechRecognition()
         
          //Test:
 //                var text = "افتح الصور"
