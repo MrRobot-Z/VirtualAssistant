@@ -6,13 +6,19 @@
 //  Copyright © 2018 MZaher. All rights reserved.
 //
 
+import MessageUI
+
+
 protocol ChatDelegate {
     func presentInChat(text: String, fromUser: Bool) -> Void
     
     func presentInToast(text: String) -> Void
     
     func promptUserForMoreInfo() -> Void
+    
+    func messageComposerHandler(messageComposerView: MFMessageComposeViewController) -> Void
 }
+
 
 class Common {
     
@@ -64,10 +70,11 @@ class Common {
     static let modeSilent : String = "mode_silent"
     static let modeVibration : String = "mode_vibration"
     
-    
+    static let sendSMS : String = "sms_send"
     
     
     // Other Entities
     static let appName : String = "app_name"
+    static let googleSearchText : String = "search_free_text"
     
 }

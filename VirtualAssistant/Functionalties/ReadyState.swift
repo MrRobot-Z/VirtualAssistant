@@ -54,6 +54,10 @@ class ReadyState : BaseFunctionality{
             newState = NonSupportedFunctionalities()
         }
             
+        else if intent == Common.googleSearch{
+            newState = GoogleSearchFunctionality()
+        }
+            
         else{
             print("No Recognizable intent found")
             newState = self

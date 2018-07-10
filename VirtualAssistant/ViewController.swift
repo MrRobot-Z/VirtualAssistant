@@ -10,8 +10,9 @@ import UIKit
 import SwiftyJSON
 import SVProgressHUD
 
+import MessageUI
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SpeechDelegate, WitDelegate, ChatDelegate{
-    
     
     // MARK: Core Class Properties/Variables
     //*****************************************************
@@ -208,6 +209,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         showToast(message: text)
     }
     
+    func messageComposerHandler(messageComposerView: MFMessageComposeViewController) {
+        presentInChat(text: "تمام راجع على الرسالة كده قبل مبعتها", fromUser: false)
+        present(messageComposerView, animated: true, completion: nil)
+    }
+    
+    
     
     //MARK: UI IB Actions functions
     //*****************************************************
@@ -217,10 +224,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         spr.toggleSpeechRecognition()
+        //print("Mic Button Pressed")
         
          //Test:
-//                var text = "افتح الصور"
-//                sendTextToWit(incomingText: text)
+               // var text = "https://www.google.com/search?q=بايرن+ميونخ"
+        
+                //UIApplication.shared.openURL(URL(string: (text))!)
+                //sendTextToWit(incomingText: text)
     }
     
     @IBAction func micButtonHold(_ sender: UILongPressGestureRecognizer) {
